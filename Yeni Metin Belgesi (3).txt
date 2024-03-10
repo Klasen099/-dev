@@ -1,0 +1,88 @@
+package startingjava;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Ap {
+
+	
+	public static void main(String[] args) {
+	
+	 
+		Scanner scanner = new Scanner(System.in);
+		
+				List<String> ad = new ArrayList<>();
+		
+		
+			List<String> yazar = new ArrayList<>();
+			
+			List<String> yayın = new ArrayList<>();
+			List<Long> sayfaSayisi = new ArrayList<>();
+			
+			List<Long> basımyıl = new ArrayList<>();
+			List<Long> fiyat = new ArrayList<>();
+
+			
+			byte menu;
+
+			while (true) {
+				Fonksiyonlar.menuGoruntule();
+				menu = scanner.nextByte();
+
+				switch (menu) {
+				case 1:
+					
+					Fonksiyonlar.kayıt(scanner, ad, yazar, yayın, sayfaSayisi, basımyıl, fiyat);
+					break;
+				case 2:
+					
+					
+					Fonksiyonlar.listele(ad, yazar, yayın, sayfaSayisi, basımyıl, fiyat);
+					break;
+				case 3:
+					
+					
+					
+					Fonksiyonlar.arama(scanner, ad, yazar, yayın, sayfaSayisi, basımyıl, fiyat);
+					break;
+				case 4:
+					
+					
+					Fonksiyonlar.duzelt(scanner, ad, yazar, yayın, sayfaSayisi, basımyıl, fiyat);
+					break;
+				case 5:
+					
+					Fonksiyonlar.silinecekler(scanner, ad, yazar, yayın, sayfaSayisi, basımyıl, fiyat);
+					break;
+				case 6:
+					
+					Fonksiyonlar.Ortalama(sayfaSayisi);
+					break;
+				case 7:
+					
+					Fonksiyonlar.enbuyuk(ad, sayfaSayisi);
+					break;
+				case 8:
+					
+					Fonksiyonlar.enkucuk(ad, sayfaSayisi);
+					break;
+			
+				case 9:
+				
+					
+					System.out.println("Program sonlandırılıyor...");
+					System.exit(0);
+					break;
+				
+				
+				default:
+					
+					
+					System.out.println("Geçersiz menü seçimi. Tekrar deneyin.");
+					break;
+				}
+			}
+		}
+	}
+}
